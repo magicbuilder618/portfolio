@@ -10,13 +10,13 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL("https://webu.life"),
   title: {
-    default: "Kei Nishikori - Full-Stack Developer",
-    template: "%s | Kei Nishikori",
+    default: "Ethan Wu - Full-Stack Developer",
+    template: "%s | Ethan Wu",
   },
   description:
-    "Portfolio website of Kei Nishikori, a passionate full-stack developer specializing in React, Node.js, and modern web technologies.",
+    "Portfolio website of Ethan Wu, a passionate full-stack developer specializing in React, Node.js, and modern web technologies.",
   keywords: [
-    "Kei Nishikori",
+    "Ethan Wu",
     "Full-Stack Developer",
     "React",
     "Node.js",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Kei Nishikori - Full-Stack Developer",
+    title: "Ethan Wu - Full-Stack Developer",
     description:
-      "Portfolio website of Kei Nishikori, a passionate full-stack developer specializing in React, Node.js, and modern web technologies.",
+      "Portfolio website of Ethan Wu, a passionate full-stack developer specializing in React, Node.js, and modern web technologies.",
     url: "https://ethanyu.dev",
     siteName: "EthanYu Portfolio",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         url: "/images/avatar.png",
         width: 1200,
         height: 630,
-        alt: "Kei Nishikori - Full-Stack Developer",
+        alt: "Ethan Wu - Full-Stack Developer",
       },
     ],
     locale: "en_US",

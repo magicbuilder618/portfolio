@@ -2,9 +2,9 @@ import type { BlogPost, PersonalInfo, Project } from "./types"
 
 // Fallback data in case Firebase is not available
 export const fallbackPersonalInfo: PersonalInfo = {
-  name: "Kei Nishikori",
+  name: "Ethan Wu",
   title: "Full-Stack Developer",
-  bio: "I'm Kei Nishikori, a dedicated full-stack developer based in San Francisco, CA. I specialize in building modern web applications that combine beautiful design with robust functionality.",
+  bio: "I'm Ethan Wu, a dedicated full-stack developer based in San Francisco, CA. I specialize in building modern web applications that combine beautiful design with robust functionality.",
   location: "San Francisco, CA",
   email: "kei@asvinfomedia.com",
   phone: "+1 (555) 123-4567",
@@ -48,7 +48,7 @@ export const fallbackBlogPosts: BlogPost[] = [
     excerpt:
       "Web development encompasses a variety of tasks and processes involved in creating websites for the internet.",
     content: "<p>Web development content...</p>",
-    author: "Kei Nishikori",
+    author: "Ethan Wu",
     date: "16.03.2023",
     readTime: "4 Min",
     views: "2.1k",
@@ -65,7 +65,7 @@ export const fallbackBlogPosts: BlogPost[] = [
     title: "Modern JavaScript Frameworks Comparison",
     excerpt: "Exploring the differences between React, Vue, and Angular to help you choose the right framework.",
     content: "<p>Framework comparison content...</p>",
-    author: "Kei Nishikori",
+    author: "Ethan Wu",
     date: "12.03.2023",
     readTime: "6 Min",
     views: "1.8k",
