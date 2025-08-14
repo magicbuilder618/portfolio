@@ -6,11 +6,12 @@ import { initializeFirebaseData } from "@/scripts/init-firebase-data"
 export async function POST() {
 
   try {
-    return await initializeFirebaseData();
+    await initializeFirebaseData();
   } catch (error) {
     console.error("Error initializing Firebase data:", error);
   }
 
+  return ;
 
   try {
     const adminEmail = "superdevp@gmail.com"
