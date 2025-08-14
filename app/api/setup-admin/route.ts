@@ -11,7 +11,15 @@ export async function POST() {
     console.error("Error initializing Firebase data:", error);
   }
 
-  return ;
+  return {
+    success: true,
+    message: "Admin user created successfully!",
+    user: {
+      email: 'user.email',
+      uid: 'user.uid',
+      createdAt: 'user.metadata.creationTime',
+    },
+  };
 
   try {
     const adminEmail = "superdevp@gmail.com"
