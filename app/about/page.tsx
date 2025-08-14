@@ -35,7 +35,6 @@ export default function AboutPage() {
   const { achievements, loading: achievementsLoading } = useAchievements()
   const { interests, loading: interestsLoading } = useInterests()
 
-  // Default stats if not available in personalInfo
   const stats = [
     {
       number: personalInfo?.stats?.projectsCompleted || "50+",
@@ -51,22 +50,17 @@ export default function AboutPage() {
     { number: personalInfo?.stats?.technologies || "15+", label: "Technologies", icon: <Zap className="w-6 h-6" /> },
   ]
 
-  // Fallback skills if not available from Firebase
   const skillsData = skills.length > 0 ? skills : []
 
-  // Fallback experience if not available from Firebase
   const experienceData =
     experience.length > 0
       ? experience
       : []
 
-  // Fallback achievements if not available from Firebase
   const achievementsData = achievements.length > 0 ? achievements : []
 
-  // Fallback interests if not available from Firebase
   const interestsData = interests.length > 0 ? interests : []
 
-  // Map icons for achievements and interests
   const getIconComponent = (iconName: string): JSX.Element => {
     const iconMap: Record<string, JSX.Element> = {
       Award: <Award className="w-6 h-6" />,
@@ -96,7 +90,6 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
 
-      {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-cyan-500/10"></div>
         <div className="container mx-auto px-4">
@@ -162,7 +155,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
       {
         stats.length > 0 && (
           <section className="py-16 bg-muted/30">
@@ -183,7 +175,6 @@ export default function AboutPage() {
         )
       }
 
-      {/* Experience Section */}
       {
         experienceData.length > 0 && (
           <section className="py-20">
@@ -195,13 +186,11 @@ export default function AboutPage() {
 
               <div className="max-w-4xl mx-auto">
                 <div className="relative">
-                  {/* Timeline line */}
                   <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-teal-400/30"></div>
 
                   <div className="space-y-12">
                     {experienceData.map((exp, index) => (
                       <div key={index} className="relative flex items-start space-x-8">
-                        {/* Timeline dot */}
                         <div
                           className={`relative z-10 w-16 h-16 rounded-full border-4 flex items-center justify-center ${
                             exp.current ? "bg-teal-400 border-teal-400" : "bg-card border-border"
@@ -210,7 +199,6 @@ export default function AboutPage() {
                           <Briefcase className={`w-6 h-6 ${exp.current ? "text-gray-900" : "text-teal-400"}`} />
                         </div>
 
-                        {/* Content */}
                         <Card className="flex-1 bg-card border-border hover:border-teal-400 transition-colors">
                           <CardContent className="p-8">
                             <div className="flex flex-wrap items-start justify-between mb-4">
@@ -253,7 +241,6 @@ export default function AboutPage() {
         )
       }
 
-      {/* Skills Section */}
       {
         skillsData.length > 0 && (
           <section className="py-20 bg-muted/30">
@@ -285,7 +272,6 @@ export default function AboutPage() {
         )
       }
 
-      {/* Achievements Section */}
       {
         achievementsData.length > 0 && (
           <section className="py-20">
@@ -316,7 +302,6 @@ export default function AboutPage() {
         )
       }
 
-      {/* Interests Section */}
       {
         interestsData.length > 0 && (
           <section className="py-20 bg-muted/30">
@@ -347,7 +332,6 @@ export default function AboutPage() {
         )
       }
 
-      {/* Contact CTA */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <Card className="bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border-teal-400 max-w-4xl mx-auto">
@@ -363,13 +347,6 @@ export default function AboutPage() {
                   <Mail className="w-5 h-5 mr-2" />
                   Send Message
                 </Button>
-                {/* <Button
-                  variant="outline"
-                  className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-gray-900 text-lg px-8 py-3"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Schedule Call
-                </Button> */}
               </div>
 
               <div className="flex justify-center space-x-6">
@@ -383,16 +360,6 @@ export default function AboutPage() {
                     <Send className="w-6 h-6 text-muted-foreground hover:text-teal-400 cursor-pointer transition-colors" />
                   </a>
                 )}
-                {/* {personalInfo?.socialLinks?.linkedin && (
-                  <a href={personalInfo.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="w-6 h-6 text-muted-foreground hover:text-teal-400 cursor-pointer transition-colors" />
-                  </a>
-                )}
-                {personalInfo?.socialLinks?.twitter && (
-                  <a href={personalInfo.socialLinks.twitter} target="_blank" rel="noopener noreferrer">
-                    <Twitter className="w-6 h-6 text-muted-foreground hover:text-teal-400 cursor-pointer transition-colors" />
-                  </a>
-                )} */}
                 {personalInfo?.email && (
                   <a href={`mailto:${personalInfo.email}`}>
                     <Mail className="w-6 h-6 text-muted-foreground hover:text-teal-400 cursor-pointer transition-colors" />
