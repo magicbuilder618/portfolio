@@ -177,10 +177,12 @@ function HomePageContent() {
               <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
               <p className="text-muted-foreground text-lg">Some of my recent work</p>
             </div>
-            <Button variant="outline" className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-gray-900">
-              View All Projects
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            <Link href="/projects">
+              <Button variant="outline" className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-gray-900">
+                View All Projects
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
           </div>
 
           {projectsLoading ? (
