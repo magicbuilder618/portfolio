@@ -1,8 +1,17 @@
 import { NextResponse } from "next/server"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "@/lib/firebase"
+import { initializeFirebaseData } from "@/scripts/init-firebase-data"
 
 export async function POST() {
+
+  try {
+    return await initializeFirebaseData();
+  } catch (error) {
+    console.error("Error initializing Firebase data:", error);
+  }
+
+
   try {
     const adminEmail = "superdevp@gmail.com"
     const adminPassword = "Admin123"
