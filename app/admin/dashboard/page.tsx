@@ -42,7 +42,6 @@ export default function AdminDashboardPage() {
       try {
         setLoading(true)
 
-        // Fetch all data from Firebase
         const [blogPosts, projects, skills, experience, achievements, interests] = await Promise.all([
           blogPostsService.getAll(),
           projectsService.getAll(),
@@ -52,7 +51,6 @@ export default function AdminDashboardPage() {
           interestsService.getAll(),
         ])
 
-        // Calculate stats
         const dashboardStats: DashboardStats = {
           totalBlogPosts: blogPosts.length,
           totalProjects: projects.length,
@@ -66,7 +64,6 @@ export default function AdminDashboardPage() {
 
         setStats(dashboardStats)
 
-        // Prepare chart data
         const contentData = [
           { name: "Blog Posts", value: blogPosts.length, color: "#0088FE" },
           { name: "Projects", value: projects.length, color: "#00C49F" },
@@ -78,7 +75,6 @@ export default function AdminDashboardPage() {
 
         setChartData(contentData)
 
-        // Prepare skills by category data
         const skillsByCategory = skills.reduce((acc: any, skill) => {
           const category = skill.category || "Other"
           acc[category] = (acc[category] || 0) + 1
@@ -92,7 +88,6 @@ export default function AdminDashboardPage() {
 
         setSkillsData(skillsChartData)
 
-        // Prepare recent activity (mock data for now)
         const activity = [
           { action: "Created blog post", item: blogPosts[0]?.title || "New Post", time: "2 hours ago", type: "blog" },
           { action: "Updated project", item: projects[0]?.title || "New Project", time: "1 day ago", type: "project" },
@@ -135,7 +130,6 @@ export default function AdminDashboardPage() {
         </Badge>
       </div>
 
-      {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -182,9 +176,7 @@ export default function AdminDashboardPage() {
         </Card>
       </div>
 
-      {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Content Overview Chart */}
         <Card>
           <CardHeader>
             <CardTitle>Content Overview</CardTitle>
@@ -202,7 +194,6 @@ export default function AdminDashboardPage() {
           </CardContent>
         </Card>
 
-        {/* Skills Distribution */}
         <Card>
           <CardHeader>
             <CardTitle>Skills by Category</CardTitle>
@@ -231,9 +222,7 @@ export default function AdminDashboardPage() {
         </Card>
       </div>
 
-      {/* Quick Actions and Recent Activity */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Quick Actions */}
         <Card>
           <CardHeader>
             <CardTitle>Quick Actions</CardTitle>
@@ -268,7 +257,6 @@ export default function AdminDashboardPage() {
           </CardContent>
         </Card>
 
-        {/* Recent Activity */}
         <Card>
           <CardHeader>
             <CardTitle>Recent Activity</CardTitle>
@@ -292,7 +280,6 @@ export default function AdminDashboardPage() {
         </Card>
       </div>
 
-      {/* Additional Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
