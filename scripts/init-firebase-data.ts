@@ -6,9 +6,9 @@ export async function initializeFirebaseData() {
   try {
     // Personal Info
     await setDoc(doc(db, "personalInfo", "main"), {
-      name: "Kei Nishikori",
+      name: "Ethan Wu",
       title: "Full-Stack Developer",
-      bio: "I'm Kei Nishikori, a dedicated full-stack developer based in San Francisco, CA. I specialize in building modern web applications that combine beautiful design with robust functionality. My journey in tech started with curiosity and has evolved into a passion for creating solutions that make a real impact.",
+      bio: "I'm Ethan Wu, a dedicated full-stack developer based in San Francisco, CA. I specialize in building modern web applications that combine beautiful design with robust functionality. My journey in tech started with curiosity and has evolved into a passion for creating solutions that make a real impact.",
       location: "San Francisco, CA",
       email: "kei@asvinfomedia.com",
       phone: "+1 (555) 123-4567",
@@ -39,7 +39,7 @@ export async function initializeFirebaseData() {
           "Web development encompasses a variety of tasks and processes involved in creating websites for the internet. It involves various specialized fields, each with its own set of skills and techniques.",
         content:
           "<p>Web development, also known as website development, encompasses a variety of tasks and processes involved in creating websites for the internet...</p>",
-        author: "Kei Nishikori",
+        author: "Ethan Wu",
         date: "16.03.2023",
         readTime: "4 Min",
         views: "2.1k",
@@ -59,7 +59,7 @@ export async function initializeFirebaseData() {
           "Exploring the differences between React, Vue, and Angular to help you choose the right framework for your next project...",
         content:
           "<p>Choosing the right JavaScript framework for your project can be challenging with so many options available...</p>",
-        author: "Kei Nishikori",
+        author: "Ethan Wu",
         date: "12.03.2023",
         readTime: "6 Min",
         views: "1.8k",
